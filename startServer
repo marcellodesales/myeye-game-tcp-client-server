@@ -1,0 +1,1 @@
+java -cp build/libs/myeye-gameserver-1.0.jar:build/libs/guava-10.0.1.jar com.myeye.gameserver.server.TCPGameServer
