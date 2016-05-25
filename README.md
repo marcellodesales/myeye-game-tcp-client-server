@@ -1,4 +1,10 @@
-Documentation-Implementation by Marcello de Sales (marcello.desales@gmail.com).
+# Myeye Game Server
+
+A simple game server using TCP protocols.
+
+* Implementation by Marcello de Sales (marcello.desales@gmail.com).
+
+# Building 
 
 I have developed the server-side considering the requirements. I have used Gradle as the build system (http://www.gradle.org) if you need to rebuild the jar or run the JUnit test cases from the console. However, the jars must be provided in this zip under "build/libs" in this revision.
 
@@ -12,6 +18,8 @@ I have developed the server-side considering the requirements. I have used Gradl
 
 Copy the dependency to Google Guava 
 cp /home/marcello/.gradle/caches/artifacts-4/com.google.guava/guava/c12498cf18507aa6433a94eb7d3e77d5/jars/guava-10.0.1.jar build/libs/
+
+# Design
 
 Given that, an immutable POJO was designed to hold the data of messages. Since the data types can be mapped directly to the Java primitive types, it was simple to produce the "marshaling" of a given instance with the types using the Java NIO API.
 
@@ -29,6 +37,8 @@ The Server-side was implemented using a multi-threaded approach with a Thread-po
 There would be a lot of changes to handle specific corner cases, specifically related to the size of the payload (as I don't have knowledge of that, I'm using 4K).
 
 The Client-side was implemented to exercise the server-side. A state-machine was created to add some knowledge about what messages can be transmitted to the server (again, this is my own assumption :D). The same GameMessageService is used here to marshal the message instance. Other adaptations of the client would depend on specific requirements.
+
+# Running the Client
 
 To Run the solution
 - First unzip the contents of the zip file to "DIR".
@@ -83,6 +93,8 @@ Sent!
 
 
 Game terminated! Good bye!
+
+# Running the Server
 
 ===================== SERVER SIDE ============================================
 
